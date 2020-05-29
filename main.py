@@ -32,6 +32,35 @@ def generate_random_passwords(length=10):
         string=string+str(i)
     print(string)
 
+
+def binary_char(char,length):
+    b= bin(ord(char))[2:]
+    if(len(b)<length):
+        b=((length-len(b))*'0')+b
+    return b
+
+def sent_binary(sentence,length):
+    b=''
+    for ch in sentence:
+        b=b+binary_char(ch,length)
+    return b
+
+def bin_char(char):
+    return chr(int(char,2))
+
+def binsent_char(binsentence,length):
+    s=''
+    for ch in range(0,len(binsentence),length):
+        s=s+bin_char(binsentence[ch:ch+length])
+    return s
+
+
 if(__name__=='__main__'):
-    generate_random_passwords()
+    #generate_random_passwords()
+    sentence="Bhargav Yagnik"
+    length=9
+    binsent=sent_binary(sentence, length)
+    print(binsent)
+    sen=binsent_char(binsent,length)
+    print(sen)
 
