@@ -55,9 +55,12 @@ def binsent_char(binsentence,length):
     return s
 
 
+
+
 if(__name__=='__main__'):
     #generate_random_passwords()
-    sentence="Bhargav Yagnik"
+    sentence="bhargav"
+    key="a"
     length=9
     binsent=sent_binary(sentence, length)
     print(binsent)
